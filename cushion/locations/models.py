@@ -14,12 +14,11 @@ class LocationCategory(models.Model):
     def __str__(self):
         return '%s' % ( self.name, )
 
-
 class Location(models.Model):
     name = models.CharField(max_length=140, blank=True)
-    category = models.ManyToManyField(LocationCategory)
-    lat = models.FloatField()
-    lng = models.FloatField()
+    categories = models.ManyToManyField(LocationCategory, related_name='location_categories')
+    lat = models.IntegerField()
+    lng = models.IntegerField()
 
     time_created = models.DateTimeField(auto_now_add=True)
     time_modified = models.DateTimeField(auto_now=True)

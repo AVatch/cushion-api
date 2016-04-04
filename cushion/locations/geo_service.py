@@ -28,10 +28,10 @@ def process_response(response):
         primary_category = [ category for category in categories if category['primary'] ][0]
         
         if not set(primary_category['id']).intersection(set(GEO_PROVIDER_CATEGORY_EXCLUSION)):
-            LOGGER.info("geo_service.process_response(): Found valid location")
+            print("geo_service.process_response(): Found valid location")
             return {
                 'name': result['name'],
-                'type': primary_category['pluralName']
+                'category': primary_category['pluralName']
             }
     
     LOGGER.error("geo_service.process_response(): Invalid location")
@@ -55,7 +55,7 @@ def search(lat, lng, radius=100):
         return process_response( response.json() )
 
     else:
-        LOGGER.error("geo_service.search(): " + response)
+        print("geo_service.search(): " + str(response) )
         return None
     
 if __name__=='__main__':

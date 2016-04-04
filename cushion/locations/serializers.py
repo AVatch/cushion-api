@@ -11,6 +11,6 @@ class LocationCategorySerializer(serializers.ModelSerializer):
         model = LocationCategory
 
 class LocationSerializer(serializers.ModelSerializer):
-    category = LocationCategorySerializer()
+    categories = LocationCategorySerializer(many=True)
     class Meta:
         model = Location
