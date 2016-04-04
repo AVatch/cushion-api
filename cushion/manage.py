@@ -1,5 +1,12 @@
 #!/usr/bin/env python
 import os
+
+from os.path import join, dirname
+from dotenv import load_dotenv
+dotenv_path = join(dirname(__file__), './cushion/.env')
+load_dotenv(dotenv_path)
+
+
 import sys
 
 if __name__ == "__main__":
