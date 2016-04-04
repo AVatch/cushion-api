@@ -44,6 +44,14 @@ class LocationCreateAPIHandler(APIView):
                     # we failed to translate the coordinates
                     return Response( { 'reason': 'We could not translate the venue' }, status=status.HTTP_400_BAD_REQUEST )
                 # we succesfully translated the coordinates
+                
+                # look up by name to see if we have the venue
+                
+                # subtract lat and lng and check if the difference is less than 10 (or some threshold)
+                # if it is, then return that location
+                
+                #if it is not, then create that location
+                
                 # get or create the category object
                 loc_category, created = LocationCategory.objects.get_or_create(name=search_results['category'])
                 
