@@ -16,6 +16,10 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+VERSION = 'v1'
+admin.site.site_header = 'Cushion' # http://stackoverflow.com/questions/4938491/django-admin-change-header-django-administration-text
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^api/' + VERSION + '/', include('locations.urls')),
 ]
