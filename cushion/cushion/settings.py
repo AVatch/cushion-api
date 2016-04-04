@@ -44,7 +44,7 @@ THIRD_PARTY_APPS = [
     'rest_framework.authtoken',
 ]
 APPS = [
-    
+    'locations',
 ]
 
 INSTALLED_APPS = CORE_APPS + THIRD_PARTY_APPS + APPS
