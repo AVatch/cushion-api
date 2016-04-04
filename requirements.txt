@@ -1,0 +1,7 @@
+python-dotenv
+django
+djangorestframework
+markdown
+django-filter
+requests
+foursquare
