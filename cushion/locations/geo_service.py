@@ -1,7 +1,5 @@
 import os
 import requests
-import logging
-LOGGER = logging.getLogger(__name__)
 
 GEO_PROVIDER = 'https://api.foursquare.com/v2/venues/search'
 
@@ -33,8 +31,7 @@ def process_response(response):
                 'name': result['name'],
                 'category': primary_category['pluralName']
             }
-    
-    LOGGER.error("geo_service.process_response(): Invalid location")
+
     return None
 
 
@@ -59,10 +56,10 @@ def search(lat, lng, radius=100):
         return None
     
 if __name__=='__main__':
-    from os.path import join, dirname
-    from dotenv import load_dotenv
-    dotenv_path = join(dirname(__file__), '../cushion/.env')
-    load_dotenv(dotenv_path)
+    # from os.path import join, dirname
+    # from dotenv import load_dotenv
+    # dotenv_path = join(dirname(__file__), '../cushion/.env')
+    # load_dotenv(dotenv_path)
     
-    print search(-33.8670,151.1957)
+    # print search(-33.8670,151.1957)
     pass

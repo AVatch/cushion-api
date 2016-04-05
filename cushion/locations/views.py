@@ -7,7 +7,7 @@ from rest_framework.authentication import SessionAuthentication, TokenAuthentica
 from rest_framework.permissions import IsAuthenticated
 
 from .geo_service import search as geo_search
-from .models import Location, LocationCategory
+from .models import Location
 from .serializers import LocationRawSerializer, LocationSerializer
 
 import logging
